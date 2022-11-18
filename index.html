@@ -1,31 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang=en>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>May be &bull; cochilight</title>
-  <style>body,html{margin:0;padding:0}div{touch-action:none;margin:auto;width:100vw;height:100vh;position:relative}img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain}</style>
-  <script>function m(t){let e=t.target.offsetWidth/17,f=Math.floor(t.offsetX/e);for(let o=1;o<17;o++){let l=Math.abs(e*(o+1)-t.offsetX),s=l<e?(e-l)/e:0;document.getElementById(`img_${o}`).style.opacity=o==f?s:o<f?1:0}}</script>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>May be &bull; cochilight</title>
+<style>body{margin:0}div{touch-action:none;margin:auto;width:100vw;height:100vh;position:relative}img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain}</style>
+<script>function i(t){const e=t.childElementCount,n=t.offsetWidth/e;function o(o){for(let i=1;i<e;i++){const e=o-n*(i+1);t.children[i].style.opacity=e>0?1:e<-1*n?0:(n+e)/n}}const i=t.offsetWidth/2;let d=0,c=setInterval((()=>o(i+Math.sin(d+=.02)*i)),16);t.addEventListener("pointermove",(t=>clearInterval(c)||o(t.offsetX)))}document.addEventListener("DOMContentLoaded",(()=>i(document.querySelector("div"))))</script>
 </head>
 <body>
-  <div onpointermove="m(event)">
-    <img id="img_0" src="i/May be 17.jpg">
-    <img id="img_1" src="i/May be 16.jpg">
-    <img id="img_2" src="i/May be 15.jpg">
-    <img id="img_3" src="i/May be 14.jpg">
-    <img id="img_4" src="i/May be 13.jpg">
-    <img id="img_5" src="i/May be 12.jpg">
-    <img id="img_6" src="i/May be 11.jpg">
-    <img id="img_7" src="i/May be 10.jpg">
-    <img id="img_8" src="i/May be 9.jpg">
-    <img id="img_9" src="i/May be 8.jpg">
-    <img id="img_10" src="i/May be 7.jpg">
-    <img id="img_11" src="i/May be 6.jpg">
-    <img id="img_12" src="i/May be 5.jpg">
-    <img id="img_13" src="i/May be 4.jpg">
-    <img id="img_14" src="i/May be 3.jpg">
-    <img id="img_15" src="i/May be 2.jpg">
-    <img id="img_16" src="i/May be 1.jpg">
-  </div>
+<div>
+<img src="i/May be 17.jpg">
+<img src="i/May be 16.jpg">
+<img src="i/May be 15.jpg">
+<img src="i/May be 14.jpg">
+<img src="i/May be 13.jpg">
+<img src="i/May be 12.jpg">
+<img src="i/May be 11.jpg">
+<img src="i/May be 10.jpg">
+<img src="i/May be 9.jpg">
+<img src="i/May be 8.jpg">
+<img src="i/May be 7.jpg">
+<img src="i/May be 6.jpg">
+<img src="i/May be 5.jpg">
+<img src="i/May be 4.jpg">
+<img src="i/May be 3.jpg">
+<img src="i/May be 2.jpg">
+<img src="i/May be 1.jpg">
+</div>
 </body>
 </html>
