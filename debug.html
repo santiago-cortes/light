@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debugger</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    div {
+      touch-action: none;
+      margin: auto;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      border: 3px dashed red;
+    }
+  </style>
+  <script>
+    function i(el) {
+      document.getElementById('dbg_width').innerHTML = el.offsetWidth
+
+      function handleDrag(event) {
+        document.getElementById('dbg_x').innerHTML = event.offsetX
+      }
+
+      function handleOrientation(event) {
+        document.getElementById('dbg_alpha').innerHTML = event.alpha
+        document.getElementById('dbg_beta').innerHTML = event.beta
+        document.getElementById('dbg_gamma').innerHTML = event.gamma
+      }
+
+      el.addEventListener('pointermove', handleDrag)
+
+      if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", handleOrientation);
+      } else {
+        alert('No se puede detectar la orientación')
+      }
+
+      alert('starting')
+    }
+
+    // document.addEventListener('DOMContentLoaded', () => i(document.querySelector('div')))
+  </script>
+</head>
+
+<body>
+  <button onclick="i(document.querySelector('div'))">START</button>
+  <div>
+    <p id="dbg_width">-</p>
+    <p id="dbg_x">-</p>
+    <p id="dbg_alpha">-</p>
+    <p id="dbg_beta">-</p>
+    <p id="dbg_gamma">-</p>
+  </div>
+</body>
+
+</html>
