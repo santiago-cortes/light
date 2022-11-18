@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Test 2 &bull; cochilight</title>
+<style>body{margin:0}div{touch-action:none;margin:auto;width:100vw;height:100vh;position:relative}img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain}</style>
+<script>function i(t){const e=t.childElementCount,n=t.offsetWidth/e;function o(o){for(let i=1;i<e;i++){const e=o-n*(i+1);t.children[i].style.opacity=e>0?1:e<-1*n?0:(n+e)/n}}const i=t.offsetWidth/2;let d=0,c=setInterval((()=>o(i+Math.sin(d+=.02)*i)),16);t.addEventListener("pointermove",(t=>clearInterval(c)||o(t.offsetX)))}document.addEventListener("DOMContentLoaded",(()=>i(document.querySelector("div"))))</script>
+</head>
+<body>
+<div>
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+<img src="4.jpg">
+<img src="5.jpg">
+<img src="6.jpg">
+<img src="7.jpg">
+<img src="8.jpg">
+</div>
+</body>
+</html>
