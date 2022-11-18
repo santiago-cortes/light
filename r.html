@@ -1,31 +1,78 @@
-<!doctype html>
-<html lang=en>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>May be &bull; cochilight</title>
-<style>body{margin:0}div{touch-action:none;margin:auto;width:100vw;height:100vh;position:relative}img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain}</style>
-<script>function i(e){const t=e.childElementCount,n=e.offsetWidth/t,i=e.offsetWidth/2;DeviceMotionEvent&&"function"==typeof DeviceMotionEvent.requestPermission&&DeviceMotionEvent.requestPermission(),window.DeviceOrientationEvent?window.addEventListener("deviceorientation",(o=>function(i){for(let o=1;o<t;o++){const t=i-n*(o+1);e.children[o].style.opacity=t>0?1:t<-1*n?0:(n+t)/n}}(e.offsetWidth-Math.min(Math.max(i+o.gamma/30*i,0),e.offsetWidth))),!0):alert("No se puede detectar la orientación")}document.addEventListener("DOMContentLoaded",(()=>i(document.querySelector("div"))))</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>May be &bull; cochilight</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    div {
+      touch-action: none;
+      margin: auto;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+  <script>
+    function i(el) {
+      alert('go!')
+      const nChildren = el.childElementCount
+      const colWidth = el.offsetWidth / nChildren
+      const m = el.offsetWidth / 2
+
+      function setLight(x) {
+        for (let i = 1; i < nChildren; i++) {
+          const distance = x - colWidth * (i + 1)
+          el.children[i].style.opacity = distance > 0 ? 1 : (distance < colWidth * -1 ? 0 : (colWidth + distance) / colWidth)
+        }
+      }
+
+      if (window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", (event) => setLight(el.offsetWidth - Math.min(Math.max(m + (event.gamma / 30) * m, 0), el.offsetWidth)), true);
+      } else {
+        alert('No se puede detectar la orientación')
+      }
+    }
+
+    // document.addEventListener('DOMContentLoaded', () => i(document.querySelector('div')))
+  </script>
 </head>
+
 <body>
-<div>
-<img src="i/May be 17.jpg">
-<img src="i/May be 16.jpg">
-<img src="i/May be 15.jpg">
-<img src="i/May be 14.jpg">
-<img src="i/May be 13.jpg">
-<img src="i/May be 12.jpg">
-<img src="i/May be 11.jpg">
-<img src="i/May be 10.jpg">
-<img src="i/May be 9.jpg">
-<img src="i/May be 8.jpg">
-<img src="i/May be 7.jpg">
-<img src="i/May be 6.jpg">
-<img src="i/May be 5.jpg">
-<img src="i/May be 4.jpg">
-<img src="i/May be 3.jpg">
-<img src="i/May be 2.jpg">
-<img src="i/May be 1.jpg">
-</div>
+  <button onclick="i(document.querySelector('div'))">START</button>
+  <div>
+    <img src="i/May be 17.jpg">
+    <img src="i/May be 16.jpg">
+    <img src="i/May be 15.jpg">
+    <img src="i/May be 14.jpg">
+    <img src="i/May be 13.jpg">
+    <img src="i/May be 12.jpg">
+    <img src="i/May be 11.jpg">
+    <img src="i/May be 10.jpg">
+    <img src="i/May be 9.jpg">
+    <img src="i/May be 8.jpg">
+    <img src="i/May be 7.jpg">
+    <img src="i/May be 6.jpg">
+    <img src="i/May be 5.jpg">
+    <img src="i/May be 4.jpg">
+    <img src="i/May be 3.jpg">
+    <img src="i/May be 2.jpg">
+    <img src="i/May be 1.jpg">
+  </div>
 </body>
+
 </html>
